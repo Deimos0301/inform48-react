@@ -8,6 +8,7 @@ import { Popover2 } from "@blueprintjs/popover2";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Contacts from './Contacts';
 import Home from './Home';
+import Product from './Products';
 
 export class App extends React.Component {
     constructor(props) {
@@ -100,7 +101,7 @@ export class App extends React.Component {
                                         <Popover2 content={uslugiMenu} placement="bottom-start">
                                             <Button text="Услуги" icon="build" rightIcon="caret-down" active={this.activeButton === 2 ? true : false} onClick={this.onStudClick} />
                                         </Popover2>
-                                        <Button text="Продукты" icon="layers" active={this.state.activeButton === 3 ? true : false} onClick={this.onAbiturClick} />
+                                        <Button text="Продукты" id="product" icon="layers" active={this.state.activeButton === 3 ? true : false} onClick={this.onAbiturClick} />
                                         <Link idx={4} to="/clients"><Button text="Клиенты" icon="person" active={this.state.activeButton === 4 ? true : false} onClick={this.onClientClick} /></Link>
                                         <Link idx={6} to="/contacts"><Button text="Контакты" icon="envelope" active={this.state.activeButton === 6 ? true : false} onClick={this.onContactClick} /></Link>
                                     </ButtonGroup>
@@ -120,6 +121,7 @@ export class App extends React.Component {
                         <Route path="/" element={<Home />}></Route>
                         <Route path="/contacts" element={<Contacts />}></Route>
                         <Route path="/clients" element={<div>АААААА</div>}></Route>
+                        <Route path="/product" element={<Product />}></Route>
                     </Routes>
                 </div>
             </BrowserRouter>

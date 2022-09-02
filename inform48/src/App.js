@@ -1,5 +1,4 @@
 import React from 'react';
-import bg from './images/bg.jpg';
 import logo from './images/logo.png';
 import "@blueprintjs/core/lib/css/blueprint.css";
 import './App.css';
@@ -8,7 +7,9 @@ import { Popover2 } from "@blueprintjs/popover2";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Contacts from './Contacts';
 import Home from './Home';
-import Product from './Products';
+import AwesomeComponent from './Products';
+import Clients from './Clients';
+
 
 export class App extends React.Component {
     constructor(props) {
@@ -49,7 +50,6 @@ export class App extends React.Component {
 
     onClientClick() {
         this.setState({ activeButton: 4 });
-
         // document.getElementById("toClients").click();
     }
 
@@ -120,8 +120,8 @@ export class App extends React.Component {
                     <Routes>
                         <Route path="/" element={<Home />}></Route>
                         <Route path="/contacts" element={<Contacts />}></Route>
-                        <Route path="/clients" element={<div>АААААА</div>}></Route>
-                        <Route path="/product" element={<Product />}></Route>
+                        <Route path="/clients" element={<Clients />}></Route>
+                        <Route path="/product" element={<AwesomeComponent />}></Route>
                     </Routes>
                 </div>
             </BrowserRouter>

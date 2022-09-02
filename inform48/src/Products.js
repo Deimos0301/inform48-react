@@ -1,49 +1,37 @@
-import React from "react";
-import '@blueprintjs/core/lib/css/blueprint.css';
-import {Tree, Classes} from "@blueprintjs/core";
+import React from 'react';
+import AwesomeSlider from 'react-awesome-slider';
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
+const AutoPlayer = withAutoplay(AwesomeSlider);
 
-class Product extends React.Component {
-    render() {
-        const sampleData = [
-            {
-                id: 0,
-                icon: "folder-close",
-                label: "Folders",
-                depth: 1,
-                childNodes: [
-                    {
-                        id: 3,
-                        icon: "document",
-                        label: "Folder 1"
-                    },
-                    {
-                        id: 4,
-                        icon: "document",
-                        label: "Folder 2"
-                    },
-                ]
-            },
-            {
-                id: 1,
-                icon: "user",
-                label: "Profile"
-            },
-            {
-                id: 2,
-                icon: "folder-close",
-                label: "Documents"
-            },
-        ]
-
+class AwesomeComponent extends React.Component {
+    render = () => {
         return (
-            <div style={{
-                display: 'block', width: 700, padding: 30
-            }}>
-                <h4>ReactJS Blueprint Tree Component</h4>
-                <div><Tree contents={sampleData} className={Classes.ELEVATION_0}></Tree></div>
-            </div>
+            <>
+                {this.state.data ?
+                    <AutoPlayer play={true}
+                        cancelOnInteraction={false} // should stop playing on user interaction
+                        interval={1000}>
+                        {this.state.data.map((item) => {
+                            return (
+                                <div className="template-container">
+                                    <div className="template-img-container">
+                                        <div className="template-img">
+                                            <img src={item.img}></img>
+                                        </div>
+                                    </div>
+                                    <div className="descr-container">
+                                        <div className='descr-box'>
+                                            <p className="descr-text">{item.caption}</p>
+                                        </div>
+                                    </div>
+                                </div>)
+                        })}
+                    </AutoPlayer>
+                    : <></>
+                }
+            </>
         );
     }
 }
 
-export default Product;
+export default AwesomeComponent;

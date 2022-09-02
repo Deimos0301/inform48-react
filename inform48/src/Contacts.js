@@ -2,7 +2,7 @@ import React from "react";
 import '@blueprintjs/core/lib/css/blueprint.css';
 import { Tree, Classes } from "@blueprintjs/core";
 
-class Product extends React.Component {
+class Contact extends React.Component {
     sampleData = [
         {
             id: 0,
@@ -72,4 +72,4 @@ class Product extends React.Component {
     }
 }
 
-export default Product;
+export default Contact;

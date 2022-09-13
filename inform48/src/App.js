@@ -22,6 +22,7 @@ export class App extends React.Component {
         this.onHomeClick = this.onHomeClick.bind(this);
         this.onContactClick = this.onContactClick.bind(this);
         this.onClientClick = this.onClientClick.bind(this);
+        this.onProductClick = this.onProductClick.bind(this);
     }
 
     componentDidMount() {
@@ -51,6 +52,10 @@ export class App extends React.Component {
     onClientClick() {
         this.setState({ activeButton: 4 });
         // document.getElementById("toClients").click();
+    }
+
+    onProductClick() {
+        this.setState({ activeButton: 3 });
     }
 
 
@@ -101,7 +106,7 @@ export class App extends React.Component {
                                         <Popover2 content={uslugiMenu} placement="bottom-start">
                                             <Button text="Услуги" icon="build" rightIcon="caret-down" active={this.activeButton === 2 ? true : false} onClick={this.onStudClick} />
                                         </Popover2>
-                                        <Button text="Продукты" id="product" icon="layers" active={this.state.activeButton === 3 ? true : false} onClick={this.onAbiturClick} />
+                                        <Link idx={3} to="/products"><Button text="Продукты" id="product" icon="layers" active={this.state.activeButton === 3 ? true : false} onClick={this.onProductClick} /></Link>
                                         <Link idx={4} to="/clients"><Button text="Клиенты" icon="person" active={this.state.activeButton === 4 ? true : false} onClick={this.onClientClick} /></Link>
                                         <Link idx={6} to="/contacts"><Button text="Контакты" icon="envelope" active={this.state.activeButton === 6 ? true : false} onClick={this.onContactClick} /></Link>
                                     </ButtonGroup>

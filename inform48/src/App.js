@@ -7,8 +7,8 @@ import { Popover2 } from "@blueprintjs/popover2";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Contacts from './Contacts';
 import Home from './Home';
-import AwesomeComponent from './Products';
 import Clients from './Clients';
+import Employeers from './Products.js';
 
 
 export class App extends React.Component {
@@ -126,7 +126,7 @@ export class App extends React.Component {
                         <Route path="/" element={<Home />}></Route>
                         <Route path="/contacts" element={<Contacts />}></Route>
                         <Route path="/clients" element={<Clients />}></Route>
-                        <Route path="/product" element={<AwesomeComponent />}></Route>
+                        <Route path="/products" element={<Employeers />}></Route>
                     </Routes>
                 </div>
             </BrowserRouter>

@@ -4,6 +4,7 @@ import { Navbar, Alignment, Menu, MenuItem, MenuDivider, Button, Intent, NavbarG
 import { Popover2 } from "@blueprintjs/popover2";
 import { Link } from 'react-router-dom';
 import Emps from './Components/Emps';
+import NewEmp from './Components/NewEmp';
 
 
 class Employeers extends React.Component {
@@ -55,9 +56,8 @@ class Employeers extends React.Component {
             ownership: [
                 'семечки', 'газеты', 'лавочка у подъезда'
             ]
-        }
+        },
     ];
-
 
 
     render() {
@@ -72,19 +72,14 @@ class Employeers extends React.Component {
                         return (<Button key={`b${index}`} className='EmpBtn' text={`${item.surename} ${item.name}`} onClick={() => { this.handleClick(index) }} />)
                     })
                 }
-                {
-                    this.Emps.map((item, index) => {
-                        return (
-                            <ul>
-                                <li>{`${item.ownership[0]}`}</li>
-                                <li>{`${item.ownership}`}</li>
-                                <li>{`${item.ownership}`}</li>
-                                <li>{`${item.ownership}`}</li>
-                            </ul>
-                        )
-                    })
-                }
-                <Emps name={this.Emps[index].name} surename={this.Emps[index].surename} age={this.Emps[index].age} position={this.Emps[index].position} ownership={this.Emps[index].ownership} />
+                <Emps
+                    name={this.Emps[index].name}
+                    surename={this.Emps[index].surename}
+                    age={this.Emps[index].age}
+                    position={this.Emps[index].position}
+                    ownership={this.Emps[index].ownership}
+                />
+                <NewEmp/>
             </div>
         );
     };

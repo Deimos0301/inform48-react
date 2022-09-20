@@ -122,3 +122,33 @@
   border: 1px solid #ff0000;
   margin-top: 20px;
 }
+
+.EmpLi {
+  width: 1010px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 1140px;
+  margin: 0 auto;
+}
+.formTitle {
+  justify-content: flex-start;
+}
+.inputForm {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.formSubmit {
+  width: 150px;
+  margin-top: 10px;
+}

@@ -1,5 +1,5 @@
 .body {
-    -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 .App {
@@ -30,44 +30,44 @@
 }
 
 #navbarGroup {
-    border: none;
-    margin-left: 100px;
+  border: none;
+  margin-left: 100px;
 }
 
 .bp4-popover2-target {
-    display: flex;
+  display: flex;
 }
 
 .div {
-    border-style: none;
+  border-style: none;
 }
 
 #divGroup {
-    /* display: flex;
+  /* display: flex;
     flex-grow: 1;
     flex-direction: row;
     height: 200px; */
-    /* width: 70vw; */
-    background: linear-gradient(to right, #236A88, rgb(64, 189, 243));
-    /* background-color: #236A88; */
-    /* background-image: url('./images/bg.jpg'); */
-    align-items: baseline;
-    justify-content: flex-end;
-    margin-top: 10px;
-    border-radius: 10px 10px 0 0;
-    /* overflow: hidden; */
-    border: 1px solid cornflowerblue;
-    /* margin: auto; */
-    /* width: 1000px; */
-  }
-   
-.bp4-navbar {
-    border-radius: 10px 10px 0 0;
-    border: none;
-    display: flex;
-    align-items: center;
+  /* width: 70vw; */
+  background: linear-gradient(to right, #236A88, rgb(64, 189, 243));
+  /* background-color: #236A88; */
+  /* background-image: url('./images/bg.jpg'); */
+  align-items: baseline;
+  justify-content: flex-end;
+  margin-top: 10px;
+  border-radius: 10px 10px 0 0;
+  /* overflow: hidden; */
+  border: 1px solid cornflowerblue;
+  /* margin: auto; */
+  /* width: 1000px; */
 }
-  
+
+.bp4-navbar {
+  border-radius: 10px 10px 0 0;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -88,7 +88,37 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.EmpList {
+  align-items: center;
+  justify-content: center;
+}
+
+.EmpItem {
+  border-radius: 2px;
+  border: 1px solid #236A88;
+  margin-top: 20px;
+}
+
+.EmpBtn {
+  margin-right: 10px;
+}
+
+.EmpTitle {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.EmpItemRed {
+  border-radius: 2px;
+  border: 1px solid #ff0000;
+  margin-top: 20px;
 }

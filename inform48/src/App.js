@@ -100,10 +100,10 @@ export class App extends React.Component {
                                 <div className="bp4-navbar-group bp4-align-right" id="navbarGroup">
                                     <ButtonGroup id="buGroup" fill={true} minimal={true} intent={Intent.NONE} large={false}>
                                         <Link idx={0} to="/"><Button text="О компании" id="buHome" icon="home" active={this.state.activeButton === 0 ? true : false} onClick={this.onHomeClick} /></Link>
-                                        <Popover2 content={projectsMenu} placement="bottom-start">
+                                        <Popover2 content={projectsMenu} >
                                             <Button text="Проекты" id="buProjects" rightIcon="caret-down" icon="projects" active={this.state.activeButton === 1 ? true : false} onClick={this.onAboutClick} />
                                         </Popover2>
-                                        <Popover2 content={uslugiMenu} placement="bottom-start">
+                                        <Popover2 content={uslugiMenu} >
                                             <Button text="Услуги" icon="build" rightIcon="caret-down" active={this.activeButton === 2 ? true : false} onClick={this.onStudClick} />
                                         </Popover2>
                                         <Link idx={3} to="/products"><Button text="Продукты" id="product" icon="layers" active={this.state.activeButton === 3 ? true : false} onClick={this.onProductClick} /></Link>

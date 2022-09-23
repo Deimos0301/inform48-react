@@ -7,22 +7,31 @@ import Emps from "./Emps";
 class NewEmp extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: '' };
+        this.state = {
+            name: 'name',
+            surename: 'surename',
+            age: 'age',
+            position: 'position'
+        };
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    onNewEmpCallback = () => {
+        alert('fhe');
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({ value: event.target.value });
     }
 
-    handleSubmit(event) {
-        
+    handleSubmit = (event) => {
+        console.log('!!!')
         event.preventDefault();
     }
 
     render() {
-        const {name, surename, age, position} = this.props;
+        const { name, surename, age, position } = this.props;
         return (
             <form className='form' onSubmit={this.handleSubmit}>
                 <label className="formTitle">
@@ -41,7 +50,7 @@ class NewEmp extends React.Component {
                     Профессия:
                     <input className='inputForm' type="text" value={position} onChange={this.handleChange} />
                 </label>
-                <input className='formSubmit' type="submit" value="Отправить" />
+                <input className='formSubmit' type="submit" value="Отправить" onClick={this.handleSubmit} />
             </form>
         )
     }

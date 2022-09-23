@@ -3,6 +3,7 @@ import App from "../App";
 import Employeers from "../Products"
 import '../App.css'
 import Emps from "./Emps";
+import { Keys } from "@blueprintjs/core";
 
 class NewEmp extends React.Component {
     constructor(props) {
@@ -17,12 +18,37 @@ class NewEmp extends React.Component {
         // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    user = {
+        name: '',
+        surename: '',
+        age: '',
+        position: ''
+    };
+
+
+
     onNewEmpCallback = () => {
         alert('fhe');
     }
 
     handleChange(event) {
-        this.setState({ value: event.target.value });
+        let val = event.target.value;
+        this.setState({ value: val });
+        switch(event.target.name){
+            case 'name': 
+                this.user.name = val;
+                break;
+            case 'surename':
+                this.user.surename = val;
+                break;
+            case 'age':
+                this.user.age = val;
+                break;
+            case 'position':
+                this.user.position = val;
+                break;
+            default: ;
+        }
     }
 
     handleSubmit = (event) => {
@@ -31,26 +57,26 @@ class NewEmp extends React.Component {
     }
 
     render() {
-        const { name, surename, age, position } = this.props;
+        const { name, surename, age, position, onAddNewUser } = this.props;
         return (
-            <form className='form' onSubmit={this.handleSubmit}>
+            <form className='form' onSubmit={(event) => { onAddNewUser(event, this.user) }}>
                 <label className="formTitle">
                     Имя:
-                    <input className='inputForm' type="text" value={name} onChange={this.handleChange} />
+                    <input className='inputForm' name='name' type="text" value={name} onChange={this.handleChange} />
                 </label>
                 <label className="formTitle">
                     Фамилия:
-                    <input className='inputForm' type="text" value={surename} onChange={this.handleChange} />
+                    <input className='inputForm' name='surename' type="text" value={surename} onChange={this.handleChange} />
                 </label>
                 <label className="formTitle">
                     Возраст:
-                    <input className='inputForm' type="text" value={age} onChange={this.handleChange} />
+                    <input className='inputForm' name='age' type="text" value={age} onChange={this.handleChange} />
                 </label>
                 <label className="formTitle">
                     Профессия:
-                    <input className='inputForm' type="text" value={position} onChange={this.handleChange} />
+                    <input className='inputForm' name='position' type="text" value={position} onChange={this.handleChange} />
                 </label>
-                <input className='formSubmit' type="submit" value="Отправить" onClick={this.handleSubmit} />
+                <input className='formSubmit' type="submit" value="Отправить" />
             </form>
         )
     }

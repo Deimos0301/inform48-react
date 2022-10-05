@@ -31,7 +31,6 @@ export class App extends React.Component {
 
         for (let i = 0; i < document.getElementById("buGroup").childNodes.length; i++) {
             let el = document.getElementById("buGroup").children[i];
-            console.log(el);
 
             if (el.href && el.attributes.idx && el.href === url) {
                 this.setState({ activeButton: Number(el.attributes.idx.value) });

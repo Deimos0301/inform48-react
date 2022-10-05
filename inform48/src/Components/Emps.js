@@ -31,11 +31,6 @@ class Emps extends Component {
                 </ul>
             </Fragment>
         )
-
-
-
-
-
     }
 }
 

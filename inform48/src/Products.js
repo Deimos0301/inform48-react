@@ -17,6 +17,7 @@ class Employeers extends React.Component {
     }
 
     handleClick = (newIndex) => {
+        console.log(newIndex);
         this.setState({ index: newIndex })
     }
 
@@ -59,6 +60,19 @@ class Employeers extends React.Component {
         },
     ];
 
+    addNewUser = (event, user) => {
+        user.ownership = [];
+        if (!user.ownership) {
+            console.log('yes!')
+        } else {
+            this.Emps.push(user);
+            this.setState({
+                nodes: this.Emps
+            })
+        }
+        event.preventDefault();
+    }
+
 
     render() {
 
@@ -79,7 +93,7 @@ class Employeers extends React.Component {
                     position={this.Emps[index].position}
                     ownership={this.Emps[index].ownership}
                 />
-                <NewEmp/>
+                <NewEmp onAddNewUser={this.addNewUser} />
             </div>
         );
     };
